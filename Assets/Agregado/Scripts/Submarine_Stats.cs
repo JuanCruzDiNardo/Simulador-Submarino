@@ -70,7 +70,7 @@ public class SubmarineStats : MonoBehaviour
     // Consumir o recargar oxígeno dependiendo de si el submarino está bajo el agua
     void UpdateOxygen()
     {
-        if (depth > 0)
+        if (depth > 3)
         {
             // Consumir oxígeno más rápido a mayor presión
             float consumption = oxygenConsumptionRate * pressure + submarine.currentSpeed * speedInfluenceOnOxygen;
