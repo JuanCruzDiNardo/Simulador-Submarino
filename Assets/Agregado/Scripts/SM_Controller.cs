@@ -167,5 +167,13 @@ public class SM_Controller : MonoBehaviour
 
         return 0f;
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Terrain"))
+        {
+            //rb.velocity += Vector3.up * emergeSpeed * 3;
+        }
+    }
 }
 
