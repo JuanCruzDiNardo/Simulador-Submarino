@@ -51,6 +51,13 @@ public class SubmarineStats : MonoBehaviour
         }else if(tutorialStep == 4 && oxygen > 80)
         {
             tutorialStep++;
+        }else if(tutorialStep == 5 && submarine.Camera.screenshotCount > 0)
+        {
+            tutorialStep++;
+            Day_Night_Controller.isCycling = true;
+        }else if(tutorialStep == 6 && Day_Night_Controller.timeOfDay < 12)
+        {
+            tutorialStep++;
         }
     }
 

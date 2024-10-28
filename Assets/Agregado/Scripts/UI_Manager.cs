@@ -9,7 +9,8 @@ public class UI_Manager : MonoBehaviour
 {
     public Canvas pauseUI;
     public Canvas inGameUI;
-    public Canvas Tutorial;    
+    public Canvas TutorialUI;    
+    public Canvas GalleryUI;    
 
     public int TutorialStep = -1;
 
@@ -19,7 +20,9 @@ public class UI_Manager : MonoBehaviour
     void Start()
     {
         pauseUI.gameObject.SetActive(false);
+        GalleryUI.gameObject.SetActive(false);
         inGameUI.gameObject.SetActive(true);
+        TutorialUI.gameObject.SetActive(true);
         paused = false;               
     }
 
@@ -42,14 +45,14 @@ public class UI_Manager : MonoBehaviour
     private void TutoStepChange()
     {        
 
-        for (int i = 0; i < Tutorial.transform.childCount; i++)
+        for (int i = 0; i < TutorialUI.transform.childCount; i++)
         {
             if (i == TutorialStep)
             {
-                Tutorial.transform.GetChild(i).gameObject.SetActive(true);
+                TutorialUI.transform.GetChild(i).gameObject.SetActive(true);
             }else
             {
-                Tutorial.transform.GetChild(i).gameObject.SetActive(false);
+                TutorialUI.transform.GetChild(i).gameObject.SetActive(false);
             }
         }
 
@@ -79,8 +82,10 @@ public class UI_Manager : MonoBehaviour
     // Función para ir al menú principal
     public void LoadMainMenu()
     {
+        /*
         Time.timeScale = 1f;           // Restablecer el tiempo (en caso de estar pausado)
         SceneManager.LoadScene("MainMenu"); // Cargar la escena del menú principal
+        */
     }
 
     // Función para salir del juego
@@ -90,22 +95,38 @@ public class UI_Manager : MonoBehaviour
         Application.Quit();            // Cerrar el juego (solo funciona en la build)
     }
 
+    public void OpenGallery()
+    {
+        pauseUI.gameObject.SetActive(false);
+        GalleryUI.gameObject.SetActive(true);
+        GalleryUI.GetComponent<Image_Manager>().LoadGallery();
+    }
+
+    public void CloseGallery()
+    {
+        pauseUI.gameObject.SetActive(true);
+        GalleryUI.gameObject.SetActive(false);
+    }
+
     private void pause()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (paused)
-            {                
-                pauseUI.gameObject.SetActive(false);
-                inGameUI.gameObject.SetActive(true);
-                paused = false;
+            {
+                paused = !paused;
+                pauseUI.gameObject.SetActive(paused);
+                GalleryUI.gameObject.SetActive(paused);
+                inGameUI.gameObject.SetActive(!paused);
+                
                 Time.timeScale = 1f;
             }
             else
-            {                
-                pauseUI.gameObject.SetActive(true);
-                inGameUI.gameObject.SetActive(false);
-                paused = true;
+            {
+                paused = !paused;
+                pauseUI.gameObject.SetActive(paused);
+                inGameUI.gameObject.SetActive(!paused);
+                
                 Time.timeScale = 0f;
             }
             

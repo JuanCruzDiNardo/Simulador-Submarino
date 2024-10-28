@@ -17,6 +17,8 @@ public class SM_Controller : MonoBehaviour
     public WaterSurface waterSurface;  // Referencia al componente WaterSurface
     public bool isEmerging = false;     // Indica si el modo "Emerger" esta activado
     public Rigidbody rb;
+
+    public Screenshot_Controller Camera;
     
 
 
@@ -24,6 +26,7 @@ public class SM_Controller : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        Camera = GetComponent<Screenshot_Controller>();
     }
 
     // Update is called once per frame
@@ -38,7 +41,8 @@ public class SM_Controller : MonoBehaviour
         {
             movement();
             acceleration();
-            RestrictSubmarineDepth();            
+            RestrictSubmarineDepth();
+            TakePhoto();
         }
         else
         {
@@ -46,6 +50,16 @@ public class SM_Controller : MonoBehaviour
         }
 
         emergeMode();
+    }
+
+    private void TakePhoto()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Camera.Photo();
+            //Camera.UI.SetActive(true);
+        }        
+            
     }
 
     private void emergeMode()
