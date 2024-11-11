@@ -354,11 +354,12 @@ GameObject:
   m_Component:
   - component: {fileID: 8379824996517345338}
   - component: {fileID: 740045517507783596}
+  - component: {fileID: 7201626055067490757}
   - component: {fileID: 1007497970763215255}
   - component: {fileID: 3914286630006963466}
   m_Layer: 0
   m_Name: Submarine
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -406,6 +407,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &7201626055067490757
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059691439735069682}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 15
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &1007497970763215255
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -449,6 +471,8 @@ MonoBehaviour:
   emergeSpeed: 10
   waterSurface: {fileID: 0}
   isEmerging: 0
+  rb: {fileID: 0}
+  Camera: {fileID: 0}
 --- !u!1 &1203929519410070195
 GameObject:
   m_ObjectHideFlags: 0

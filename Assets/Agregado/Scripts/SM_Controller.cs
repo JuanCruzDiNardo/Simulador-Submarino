@@ -26,7 +26,7 @@ public class SM_Controller : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        Camera = GetComponent<Screenshot_Controller>();
+        Camera = GetComponentInChildren<Screenshot_Controller>();
     }
 
     // Update is called once per frame
@@ -56,10 +56,13 @@ public class SM_Controller : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
+            Camera.PhotoMode();
+            //Camera.UI.SetActive(true);        
+        }else if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
             Camera.Photo();
-            //Camera.UI.SetActive(true);
         }        
-            
+           
     }
 
     private void emergeMode()
@@ -118,7 +121,7 @@ public class SM_Controller : MonoBehaviour
         //transform.Translate(Vector3.forward * currentSpeed * Time.deltaTime);
 
         rb.velocity = (transform.forward * currentSpeed );
-        Debug.Log(rb.velocity);
+        //Debug.Log(rb.velocity);
     }
 
     void movement()
