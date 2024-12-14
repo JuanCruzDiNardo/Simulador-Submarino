@@ -10,10 +10,13 @@ public class Fish_Controller : MonoBehaviour
     public float escapeSpeed = 5f; // Velocidad al huir
     //public float detectionRadius = 5f; // Distancia de detección del jugador
     public bool escaping = false;
+    public bool alredyCaptured = false;
 
     private Vector3 randomDirection;
-    private float changeDirectionInterval = 3f; // Tiempo entre cambios de dirección
-    private float directionChangeTimer;    
+    private float changeDirectionInterval = 5f; // Tiempo entre cambios de dirección
+    private float directionChangeTimer;
+    Vector3 direction = Vector3.zero;
+    float speed = 0;
     private Transform player;
     private Rigidbody rb;
     public WaterSurface waterSurface;
@@ -28,7 +31,7 @@ public class Fish_Controller : MonoBehaviour
     }
 
     void Update()
-    {
+    {        
         // Actualiza el temporizador de cambio de dirección si no está escapando
         if (!escaping)
         {
@@ -38,15 +41,19 @@ public class Fish_Controller : MonoBehaviour
                 ChooseRandomDirection();
                 directionChangeTimer = 0;
                 changeDirectionInterval = Random.Range(2f, 7f);
-            }
-            Swim(randomDirection, swimSpeed);
+                direction = randomDirection;
+                speed = swimSpeed;
+            }            
         }
         else
         {
             // Nadar en dirección contraria al jugador
             Vector3 escapeDirection = (transform.position - player.position).normalized;
-            Swim(escapeDirection, escapeSpeed);
+            direction = escapeDirection;
+            speed = escapeSpeed;
+            directionChangeTimer = 0;
         }
+        Swim(direction, speed);
         RestrictDepth();
     }
 

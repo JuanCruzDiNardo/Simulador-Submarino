@@ -151,8 +151,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FishPoints: 50
   swimSpeed: 4
-  escapeSpeed: 5
+  escapeSpeed: 8
   escaping: 0
+  alredyCaptured: 0
   waterSurface: {fileID: 0}
 --- !u!1 &7825310271514462547
 GameObject:

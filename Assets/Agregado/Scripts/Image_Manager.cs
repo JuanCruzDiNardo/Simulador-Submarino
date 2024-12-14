@@ -33,11 +33,10 @@ public class Image_Manager : MonoBehaviour
         foreach (Transform child in canvas.transform)
         {
             // Verifica si el GameObject tiene un componente Image
-            Image img = child.GetComponent<Image>();
-            Button btn = child.GetComponent<Button>();
+            Image img = child.GetComponent<Image>();            
 
             // Si tiene Image y NO tiene Button, lo agrega a la lista
-            if (img != null && btn == null)
+            if (img != null && child.CompareTag("Image"))
             {
                 img.enabled = true;
                 images.Add(img);

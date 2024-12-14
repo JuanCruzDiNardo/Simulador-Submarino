@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.IO;
+using System.Collections.Generic;
 
 public class Screenshot_Controller : MonoBehaviour
 {
@@ -8,11 +9,13 @@ public class Screenshot_Controller : MonoBehaviour
     public int screenshotCount = 0;  // Contador para numerar las capturas
     public GameObject UI;
 
-    private int fishCount = 0;              // Cantidad de peces en el área
-    public int pointsPerFish = 10;          // Puntos por cada pez en el área
+    public List<Fish_Controller> fishInCamera = new List<Fish_Controller>();
 
-    public int pointsInCamera = 0;          // Puntos actuales en camara sin tomar la foto
-    private int totalPoints = 0;            // Puntos acumulados
+    private int fishCount = 0;              // Cantidad de peces en el área
+    //public int pointsPerFish = 10;          // Puntos por cada pez en el área
+
+    //public int pointsInCamera = 0;          // Puntos actuales en camara sin tomar la foto
+    public int totalPoints = 0;            // Puntos acumulados
     
     private bool isPhotoMode = false;       // Indica si el jugador está en "modo foto"
 
@@ -64,9 +67,16 @@ public class Screenshot_Controller : MonoBehaviour
         // Calcular puntos si hay peces en el área
         if (fishCount > 0)
         {
-            int pointsEarned = fishCount * pointsPerFish;
+            int pointsEarned = 0;
+            foreach (Fish_Controller fish in fishInCamera)
+            {
+                fish.alredyCaptured = true;
+                pointsEarned += fish.FishPoints; //fishCount * pointsPerFish;
+            }                           
             totalPoints += pointsEarned;
             Debug.Log("Puntos ganados: " + pointsEarned + " | Puntos totales: " + totalPoints);
+
+            fishInCamera.Clear();
         }
         else
         {
@@ -84,7 +94,11 @@ public class Screenshot_Controller : MonoBehaviour
 
             Fish_Controller fish = other.gameObject.GetComponent<Fish_Controller>();
 
-            pointsInCamera += fish.FishPoints;
+            if (!fish.alredyCaptured)
+            {                                
+                fishInCamera.Add(fish);
+            }
+            
         }
     }
 
@@ -97,7 +111,10 @@ public class Screenshot_Controller : MonoBehaviour
 
             Fish_Controller fish = other.gameObject.GetComponent<Fish_Controller>();
 
-            pointsInCamera -= fish.FishPoints;
+            if (!fish.alredyCaptured)
+            {                                
+                fishInCamera.Remove(fish);
+            }
         }
     }
 

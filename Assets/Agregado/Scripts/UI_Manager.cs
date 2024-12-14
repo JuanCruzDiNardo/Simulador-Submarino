@@ -116,6 +116,7 @@ public class UI_Manager : MonoBehaviour
             {
                 paused = !paused;
                 pauseUI.gameObject.SetActive(paused);
+                TutorialUI.gameObject.SetActive(!paused);
                 GalleryUI.gameObject.SetActive(paused);
                 inGameUI.gameObject.SetActive(!paused);
                 
@@ -125,6 +126,7 @@ public class UI_Manager : MonoBehaviour
             {
                 paused = !paused;
                 pauseUI.gameObject.SetActive(paused);
+                TutorialUI.gameObject.SetActive(!paused);
                 inGameUI.gameObject.SetActive(!paused);
                 
                 Time.timeScale = 0f;
