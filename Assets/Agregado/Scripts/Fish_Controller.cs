@@ -5,9 +5,10 @@ using UnityEngine.Rendering.HighDefinition;
 
 public class Fish_Controller : MonoBehaviour
 {
+    public int FishPoints = 10; //Puntaje por pez
     public float swimSpeed = 2f; // Velocidad normal de nado
     public float escapeSpeed = 5f; // Velocidad al huir
-    public float detectionRadius = 5f; // Distancia de detección del jugador
+    //public float detectionRadius = 5f; // Distancia de detección del jugador
     public bool escaping = false;
 
     private Vector3 randomDirection;
@@ -58,7 +59,7 @@ public class Fish_Controller : MonoBehaviour
         if (direction != Vector3.zero)
         {
             Quaternion targetRotation = Quaternion.LookRotation(direction);
-            rb.rotation = Quaternion.Slerp(rb.rotation, targetRotation, Time.deltaTime * speed);
+            rb.rotation = Quaternion.Slerp(rb.rotation, targetRotation, Time.deltaTime * speed/2);
         }
     }
 

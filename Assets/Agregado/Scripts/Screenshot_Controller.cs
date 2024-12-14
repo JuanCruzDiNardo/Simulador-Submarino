@@ -8,9 +8,12 @@ public class Screenshot_Controller : MonoBehaviour
     public int screenshotCount = 0;  // Contador para numerar las capturas
     public GameObject UI;
 
-    public int pointsPerFish = 10;          // Puntos por cada pez en el área
-    private int totalPoints = 0;            // Puntos acumulados
     private int fishCount = 0;              // Cantidad de peces en el área
+    public int pointsPerFish = 10;          // Puntos por cada pez en el área
+
+    public int pointsInCamera = 0;          // Puntos actuales en camara sin tomar la foto
+    private int totalPoints = 0;            // Puntos acumulados
+    
     private bool isPhotoMode = false;       // Indica si el jugador está en "modo foto"
 
     // Llama a esta función para tomar la captura de pantalla
@@ -78,6 +81,10 @@ public class Screenshot_Controller : MonoBehaviour
         if (other.CompareTag("Fish"))
         {
             fishCount++;                    // Incrementa el contador de peces en el área
+
+            Fish_Controller fish = other.gameObject.GetComponent<Fish_Controller>();
+
+            pointsInCamera += fish.FishPoints;
         }
     }
 
@@ -87,6 +94,10 @@ public class Screenshot_Controller : MonoBehaviour
         if (other.CompareTag("Fish"))
         {
             fishCount--;                    // Decrementa el contador de peces en el área
+
+            Fish_Controller fish = other.gameObject.GetComponent<Fish_Controller>();
+
+            pointsInCamera -= fish.FishPoints;
         }
     }
 
