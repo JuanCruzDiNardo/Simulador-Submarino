@@ -1,26 +1,34 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class UI_Manager : MonoBehaviour
 {
-    public Canvas pauseUI;
+    public Canvas pauseUI;    
     public Canvas inGameUI;
     public Canvas TutorialUI;    
-    public Canvas GalleryUI;    
+    public Canvas GalleryUI;
+    public Canvas Summary;
+
+    public TextMeshProUGUI txtFishes;
+    public TextMeshProUGUI txtTotalPoints;
 
     public int TutorialStep = -1;
 
     public bool paused = false;
+    public bool inSummary = false;
 
     // Start is called before the first frame update
     void Start()
     {
         pauseUI.gameObject.SetActive(false);
         GalleryUI.gameObject.SetActive(false);
+        Summary.gameObject.SetActive(false);
         inGameUI.gameObject.SetActive(true);
         TutorialUI.gameObject.SetActive(true);
         paused = false;               
@@ -30,7 +38,46 @@ public class UI_Manager : MonoBehaviour
     void Update()
     {
         pause();
-        StepCheck();       
+        StepCheck();
+        CloseSummary();
+    }
+
+    private void CloseSummary()
+    {
+        if (inSummary && (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Space)|| Input.GetKeyDown(KeyCode.Return)))
+        {
+            ShowSummary();
+        }
+            
+    }
+
+    public void ShowSummary()
+    {
+        Time.timeScale = Time.timeScale == 0f? 1f : 0f;
+
+        inSummary = !inSummary;
+        inGameUI.gameObject.SetActive(!inSummary);
+        Summary.gameObject.SetActive(inSummary);
+
+        CreateFishList();
+    }
+
+    private void CreateFishList()
+    {
+        txtFishes.text = string.Empty;        
+
+        List<fish> fishList = Screenshot_Controller.fishCaught;
+
+        foreach (species fishSpecies in Enum.GetValues(typeof(species)))
+        {
+            int count = fishList.Where(x => x.FishSpecies == fishSpecies).Count();
+            int points = fishList.Where(x => x.FishSpecies == fishSpecies).Sum(S => S.FishPoints);
+
+            if (count > 0)
+                txtFishes.text += $"{fishSpecies} x{count}  {points}P. \n";
+        }
+
+        txtTotalPoints.text = $"Total Points: {Screenshot_Controller.totalPoints}";
     }
 
     private void StepCheck()
@@ -74,9 +121,13 @@ public class UI_Manager : MonoBehaviour
     // Función para reanudar el juego
     public void ResumeGame()
     {
-        Time.timeScale = 1f;           // Restablecer el tiempo del juego
-        inGameUI.gameObject.SetActive(true);      // Activar el Canvas de juego
-        pauseUI.gameObject.SetActive(false);      // Desactivar el Canvas de pausa
+        paused = !paused;
+        pauseUI.gameObject.SetActive(paused);
+        TutorialUI.gameObject.SetActive(!paused);
+        GalleryUI.gameObject.SetActive(paused);
+        inGameUI.gameObject.SetActive(!paused);
+
+        Time.timeScale = 1f;
     }
 
     // Función para ir al menú principal
@@ -110,7 +161,7 @@ public class UI_Manager : MonoBehaviour
 
     private void pause()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !inSummary)
         {
             if (paused)
             {

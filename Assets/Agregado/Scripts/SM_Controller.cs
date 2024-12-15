@@ -32,7 +32,8 @@ public class SM_Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (!isEmerging)
+            TakePhoto();
     }
 
     private void FixedUpdate()
@@ -41,8 +42,7 @@ public class SM_Controller : MonoBehaviour
         {
             movement();
             acceleration();
-            RestrictSubmarineDepth();
-            TakePhoto();
+            RestrictSubmarineDepth();           
         }
         else
         {

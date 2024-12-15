@@ -5,6 +5,7 @@ using UnityEngine.Rendering.HighDefinition;
 
 public class Fish_Controller : MonoBehaviour
 {
+    public species species; 
     public int FishPoints = 10; //Puntaje por pez
     public float swimSpeed = 2f; // Velocidad normal de nado
     public float escapeSpeed = 5f; // Velocidad al huir
@@ -133,4 +134,20 @@ public class Fish_Controller : MonoBehaviour
             directionChangeTimer = 0;
         }
     }
+}
+
+public class fish
+{
+    public species FishSpecies { get; set; }
+
+    public int FishPoints { get; set; }
+}
+
+public enum species
+{
+    Shark,
+    hake,
+    turbot,
+    trout,
+    salmon
 }

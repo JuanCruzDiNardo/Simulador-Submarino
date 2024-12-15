@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f170c414a9ccb4c9be15b10ab5fc77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  species: 2
   FishPoints: 30
   swimSpeed: 2
   escapeSpeed: 8

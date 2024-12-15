@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using System.IO;
 using System.Collections.Generic;
@@ -8,14 +9,18 @@ public class Screenshot_Controller : MonoBehaviour
     public string screenshotFileName = "SubmarineScreenshot";
     public int screenshotCount = 0;  // Contador para numerar las capturas
     public GameObject UI;
+    public GameObject CameraUI;    
+    public TextMeshProUGUI txtPoints;
 
     public List<Fish_Controller> fishInCamera = new List<Fish_Controller>();
+
+    public static List<fish> fishCaught = new List<fish>();
 
     private int fishCount = 0;              // Cantidad de peces en el área
     //public int pointsPerFish = 10;          // Puntos por cada pez en el área
 
     //public int pointsInCamera = 0;          // Puntos actuales en camara sin tomar la foto
-    public int totalPoints = 0;            // Puntos acumulados
+    public static int totalPoints = 0;            // Puntos acumulados
     
     private bool isPhotoMode = false;       // Indica si el jugador está en "modo foto"
 
@@ -26,6 +31,7 @@ public class Screenshot_Controller : MonoBehaviour
         isPhotoMode = !isPhotoMode;     // Alternar entre activar y desactivar el modo foto
         Debug.Log(isPhotoMode ? "Modo foto activado" : "Modo foto desactivado");
         UI.SetActive(!isPhotoMode);
+        CameraUI.SetActive(isPhotoMode);
     }
 
     public void Photo()
@@ -57,7 +63,7 @@ public class Screenshot_Controller : MonoBehaviour
         // Captura y guarda la pantalla
         ScreenCapture.CaptureScreenshot(filePath);        
 
-        Debug.Log("Captura de pantalla guardada en: " + filePath);
+        //Debug.Log("Captura de pantalla guardada en: " + filePath);
         
         CountPoints();
     }
@@ -72,9 +78,13 @@ public class Screenshot_Controller : MonoBehaviour
             {
                 fish.alredyCaptured = true;
                 pointsEarned += fish.FishPoints; //fishCount * pointsPerFish;
+
+                fishCaught.Add(new fish() { FishSpecies = fish.species, FishPoints = fish.FishPoints });
             }                           
             totalPoints += pointsEarned;
-            Debug.Log("Puntos ganados: " + pointsEarned + " | Puntos totales: " + totalPoints);
+            Debug.Log("Points earned: " + pointsEarned + " | Total points: " + totalPoints);
+
+            txtPoints.text = "Points earned: " + pointsEarned + " | Total points: " + totalPoints;
 
             fishInCamera.Clear();
         }

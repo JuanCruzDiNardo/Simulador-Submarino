@@ -15,12 +15,13 @@ public class Day_Night_Controller : MonoBehaviour
     public static float timeOfDay = 12f;  // Hora del día en formato de 24 horas
     public float dayDuration = 60f; // Duración de un día completo en segundos
     public static bool isCycling = false;
+    public GameObject UI;
 
     void Start()
     {
         // Configura el color y la intensidad de la luz de la luna (fijo)
         //moonLight.color = moonColor;
-        moonLight.intensity = 0.2f; // Puedes ajustar este valor para controlar la intensidad de la luna
+        moonLight.intensity = 0.2f; // Puedes ajustar este valor para controlar la intensidad de la luna        
     }
 
     void Update()
@@ -38,7 +39,11 @@ public class Day_Night_Controller : MonoBehaviour
     {
         // Actualizar la hora del día
         timeOfDay += (Time.deltaTime / dayDuration) * 24f;
-        if (timeOfDay >= 24f) timeOfDay = 0f; // Reiniciar al llegar a 24 horas
+        if (timeOfDay >= 24f)
+        {
+            timeOfDay = 0f; // Reiniciar al llegar a 24 horas
+            UI.GetComponent<UI_Manager>().ShowSummary();
+        }
     }
 
     private void DayOnOff()
