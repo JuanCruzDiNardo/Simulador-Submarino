@@ -4,11 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class UI_Manager : MonoBehaviour
 {
+    public GameObject cameraUI;
+
     public Canvas pauseUI;    
     public Canvas inGameUI;
     public Canvas TutorialUI;    
@@ -25,7 +28,7 @@ public class UI_Manager : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
+    {        
         pauseUI.gameObject.SetActive(false);
         GalleryUI.gameObject.SetActive(false);
         Summary.gameObject.SetActive(false);
@@ -44,7 +47,7 @@ public class UI_Manager : MonoBehaviour
 
     private void CloseSummary()
     {
-        if (inSummary && (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Space)|| Input.GetKeyDown(KeyCode.Return)))
+        if (inSummary && (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Return)))
         {
             ShowSummary();
         }
@@ -53,6 +56,10 @@ public class UI_Manager : MonoBehaviour
 
     public void ShowSummary()
     {
+        if (Screenshot_Controller.isPhotoMode)
+            cameraUI.GetComponent<Screenshot_Controller>().PhotoMode();
+            
+
         Time.timeScale = Time.timeScale == 0f? 1f : 0f;
 
         inSummary = !inSummary;
@@ -78,6 +85,9 @@ public class UI_Manager : MonoBehaviour
         }
 
         txtTotalPoints.text = $"Total Points: {Screenshot_Controller.totalPoints}";
+
+        Screenshot_Controller.totalPoints = 0;
+        Screenshot_Controller.fishCaught.Clear();
     }
 
     private void StepCheck()

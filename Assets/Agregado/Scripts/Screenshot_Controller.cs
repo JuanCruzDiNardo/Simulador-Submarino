@@ -22,7 +22,7 @@ public class Screenshot_Controller : MonoBehaviour
     //public int pointsInCamera = 0;          // Puntos actuales en camara sin tomar la foto
     public static int totalPoints = 0;            // Puntos acumulados
     
-    private bool isPhotoMode = false;       // Indica si el jugador está en "modo foto"
+    public static bool isPhotoMode = false;       // Indica si el jugador está en "modo foto"
 
     // Llama a esta función para tomar la captura de pantalla
     public void PhotoMode()
