@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{7C671577-E39F-4DAA-99C7-41039105F44C}" SchemaVersion="123">
+	<AudioObjects>
+		<WorkUnit Name="Default Work Unit" ID="{7C671577-E39F-4DAA-99C7-41039105F44C}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="Emerge Alarm 2" ID="{0A0CA7A9-9DB1-46A9-98F6-CBA951A2428F}" ShortID="472412439">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{89FA1FC5-F072-41F3-B6EA-87E10E3E9F22}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{84BAC951-DA58-4900-8DFD-36F954FCEA9A}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Emerge Alarm 2" ID="{CF74D23A-E980-42B6-87ED-3E08EC076426}">
+							<Language>SFX</Language>
+							<AudioFile>Emerge Alarm 2.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="862755170"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Emerge Alarm 2" ID="{CF74D23A-E980-42B6-87ED-3E08EC076426}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Emerge Alarm" ID="{C6F0B679-5BFA-42E1-9E29-4D048AD132C9}" ShortID="850200822">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{89FA1FC5-F072-41F3-B6EA-87E10E3E9F22}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{84BAC951-DA58-4900-8DFD-36F954FCEA9A}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Emerge Alarm" ID="{0948E4AD-086D-48DD-BFBD-0A71B53A2B3D}">
+							<Language>SFX</Language>
+							<AudioFile>Emerge Alarm.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="988955484"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Emerge Alarm" ID="{0948E4AD-086D-48DD-BFBD-0A71B53A2B3D}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="On Water Surface" ID="{3B173DDF-D88F-4EE5-A010-8DB7967764A3}" ShortID="1009410376">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{89FA1FC5-F072-41F3-B6EA-87E10E3E9F22}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{84BAC951-DA58-4900-8DFD-36F954FCEA9A}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="On Water Surface" ID="{8452FC11-FEE8-41B9-94D0-2A42D81BC3AD}">
+							<Language>SFX</Language>
+							<AudioFile>On Water Surface.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="638218279"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="On Water Surface" ID="{8452FC11-FEE8-41B9-94D0-2A42D81BC3AD}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Sonar" ID="{B8A3509B-31FB-440B-BD70-FC2B921505C0}" ShortID="1006576844">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{89FA1FC5-F072-41F3-B6EA-87E10E3E9F22}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{84BAC951-DA58-4900-8DFD-36F954FCEA9A}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Sonar" ID="{4B0544E4-1783-4A76-80B3-F7B254615CE9}">
+							<Language>SFX</Language>
+							<AudioFile>Sonar.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="1051687162"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Sonar" ID="{4B0544E4-1783-4A76-80B3-F7B254615CE9}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Sumerge" ID="{11769466-166D-4E9F-847F-6F2547D8DE35}" ShortID="814683811">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{89FA1FC5-F072-41F3-B6EA-87E10E3E9F22}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{84BAC951-DA58-4900-8DFD-36F954FCEA9A}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Sumerge" ID="{C46F06A3-D656-40CB-9D29-A300B9561FA1}">
+							<PropertyList>
+								<Property Name="LoopBegin" Type="Real64" Value="0"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimEnd" Type="Real64" Value="1.63528768366993"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Sumerge.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="581395452"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Sumerge" ID="{C46F06A3-D656-40CB-9D29-A300B9561FA1}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Underwater" ID="{B2F19CA3-1F62-4DEB-BB88-46B4594B6090}" ShortID="291302489">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{89FA1FC5-F072-41F3-B6EA-87E10E3E9F22}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{84BAC951-DA58-4900-8DFD-36F954FCEA9A}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Underwater" ID="{0398EECA-6EF1-4218-82BA-001F9CF3BDE1}">
+							<PropertyList>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimEnd" Type="Real64" Value="19.3261277324005"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Underwater.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="117648690"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Underwater" ID="{0398EECA-6EF1-4218-82BA-001F9CF3BDE1}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Flash" ID="{F032E68D-19A1-45FC-9BBB-EE312B68743F}" ShortID="780494517">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{89FA1FC5-F072-41F3-B6EA-87E10E3E9F22}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{84BAC951-DA58-4900-8DFD-36F954FCEA9A}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Flash" ID="{3FC76E5C-B089-4318-906F-92F93109A9C8}">
+							<Language>SFX</Language>
+							<AudioFile>Flash.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="125599680"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Flash" ID="{3FC76E5C-B089-4318-906F-92F93109A9C8}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

@@ -1,0 +1,149 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "154",
+  "SoundBanks": [
+   {
+    "Id": "1301294229",
+    "Type": "User",
+    "GUID": "{3D4FCA13-709D-4901-9509-05E34E4D1BF5}",
+    "Language": "SFX",
+    "Hash": "{ABE15300-947E-1657-9C8E-9D1EA44F32BB}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\SubmarineBank",
+    "ShortName": "SubmarineBank",
+    "Path": "SubmarineBank.bnk",
+    "Media": [
+     {
+      "Id": "117648690",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Underwater.wav",
+      "CachePath": "EF/{EFECF50D-D130-AE83-4AC5-AC730C38E629}.wem"
+     },
+     {
+      "Id": "125599680",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Flash.wav",
+      "CachePath": "77/{77ABDE90-0D93-0B5F-7314-B3B174D9C0B7}.wem"
+     },
+     {
+      "Id": "581395452",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Sumerge.wav",
+      "CachePath": "24/{2430994F-C8AB-8EA5-1FFA-A947C106729E}.wem"
+     },
+     {
+      "Id": "638218279",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "On Water Surface.wav",
+      "CachePath": "29/{2991F286-6E40-9361-5C15-935E4EF4FB22}.wem"
+     },
+     {
+      "Id": "988955484",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Emerge Alarm.wav",
+      "CachePath": "E5/{E5812C31-A9D0-FE16-412B-2AC056C2B3E0}.wem"
+     },
+     {
+      "Id": "1051687162",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Sonar.wav",
+      "CachePath": "7B/{7B0FC49F-AF5D-6497-A2A6-F6A114145C31}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "3906092864",
+      "Name": "Play_EmergeAlarm",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_EmergeAlarm",
+      "GUID": "{3C4B080A-CFEF-4D11-A4DF-90DCDBC89A0C}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "988955484"
+       }
+      ]
+     },
+     {
+      "Id": "1942342396",
+      "Name": "Play_Flash",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Flash",
+      "GUID": "{56AD6B00-0D07-4AEA-85B1-A1CAA304712D}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.7502041",
+      "DurationMax": "1.7502041",
+      "MediaRefs": [
+       {
+        "Id": "125599680"
+       }
+      ]
+     },
+     {
+      "Id": "3376092819",
+      "Name": "Play_Sonar",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Sonar",
+      "GUID": "{EA20473A-7336-4B56-8381-B979361D6AA0}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "1051687162"
+       }
+      ]
+     },
+     {
+      "Id": "2330535514",
+      "Name": "Play_Sumerge",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Sumerge",
+      "GUID": "{6FE55674-85AA-430A-9AC7-1AE061B66644}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.6352876",
+      "DurationMax": "1.6352876",
+      "MediaRefs": [
+       {
+        "Id": "581395452"
+       }
+      ]
+     },
+     {
+      "Id": "3763399919",
+      "Name": "Play_SurfaceAmbience",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_SurfaceAmbience",
+      "GUID": "{916E01B6-18C1-48D1-9706-E136FCAC7122}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "638218279"
+       }
+      ]
+     },
+     {
+      "Id": "1646958889",
+      "Name": "Play_UnderwaterAmbience",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_UnderwaterAmbience",
+      "GUID": "{699181E6-D51D-4F43-90DE-D8A3988F16D8}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "117648690"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{AFDBC50B-D505-FBA7-50A6-2B3D6FCD05AA}"
+ }
+}

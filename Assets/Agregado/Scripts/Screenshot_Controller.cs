@@ -24,6 +24,8 @@ public class Screenshot_Controller : MonoBehaviour
     
     public static bool isPhotoMode = false;       // Indica si el jugador está en "modo foto"
 
+    public SubmarineSoundController soundManager;     // Audio State Manager
+
     // Llama a esta función para tomar la captura de pantalla
     public void PhotoMode()
     {
@@ -40,6 +42,7 @@ public class Screenshot_Controller : MonoBehaviour
         {
             //UI.SetActive(false);
             TakeScreenshot();
+            soundManager.FlashSound();
             //UI.SetActive(true);
         }
     }

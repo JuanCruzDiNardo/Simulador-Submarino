@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{3BD74638-131A-4795-9866-36C0FEC7B096}" SchemaVersion="123">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{3BD74638-131A-4795-9866-36C0FEC7B096}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Play_SurfaceAmbience" ID="{916E01B6-18C1-48D1-9706-E136FCAC7122}">
+					<ChildrenList>
+						<Action Name="" ID="{07CF5097-A515-4EF8-985A-EFAC89727DC2}" ShortID="188560642">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="On Water Surface" ID="{3B173DDF-D88F-4EE5-A010-8DB7967764A3}" WorkUnitID="{7C671577-E39F-4DAA-99C7-41039105F44C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_UnderwaterAmbience" ID="{699181E6-D51D-4F43-90DE-D8A3988F16D8}">
+					<ChildrenList>
+						<Action Name="" ID="{C0065DC8-1B4F-4F43-9ADE-BFA01B41FA3C}" ShortID="927899254">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Underwater" ID="{B2F19CA3-1F62-4DEB-BB88-46B4594B6090}" WorkUnitID="{7C671577-E39F-4DAA-99C7-41039105F44C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Sumerge" ID="{6FE55674-85AA-430A-9AC7-1AE061B66644}">
+					<ChildrenList>
+						<Action Name="" ID="{FAD36D04-8A36-45DB-BA61-5AFC6A4ED1BE}" ShortID="292760385">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Sumerge" ID="{11769466-166D-4E9F-847F-6F2547D8DE35}" WorkUnitID="{7C671577-E39F-4DAA-99C7-41039105F44C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Sonar" ID="{EA20473A-7336-4B56-8381-B979361D6AA0}">
+					<ChildrenList>
+						<Action Name="" ID="{15E26FA6-1065-415F-9394-861D517A767F}" ShortID="35168628">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Sonar" ID="{B8A3509B-31FB-440B-BD70-FC2B921505C0}" WorkUnitID="{7C671577-E39F-4DAA-99C7-41039105F44C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_EmergeAlarm" ID="{3C4B080A-CFEF-4D11-A4DF-90DCDBC89A0C}">
+					<ChildrenList>
+						<Action Name="" ID="{FD66BB08-7EAD-4A2A-8680-99AD5614D914}" ShortID="808669911">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Emerge Alarm" ID="{C6F0B679-5BFA-42E1-9E29-4D048AD132C9}" WorkUnitID="{7C671577-E39F-4DAA-99C7-41039105F44C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Flash" ID="{56AD6B00-0D07-4AEA-85B1-A1CAA304712D}">
+					<ChildrenList>
+						<Action Name="" ID="{95CB197F-6AE4-40F8-ACB2-A645A5C727CB}" ShortID="1067118178">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Flash" ID="{F032E68D-19A1-45FC-9BBB-EE312B68743F}" WorkUnitID="{7C671577-E39F-4DAA-99C7-41039105F44C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

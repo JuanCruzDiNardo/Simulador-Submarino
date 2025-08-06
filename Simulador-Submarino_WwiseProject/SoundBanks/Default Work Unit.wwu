@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{F40DB1ED-11EC-4A07-84F8-CC8006377D39}" SchemaVersion="123">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{F40DB1ED-11EC-4A07-84F8-CC8006377D39}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="SubmarineBank" ID="{3D4FCA13-709D-4901-9509-05E34E4D1BF5}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Play_Sumerge" ID="{6FE55674-85AA-430A-9AC7-1AE061B66644}" WorkUnitID="{3BD74638-131A-4795-9866-36C0FEC7B096}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_SurfaceAmbience" ID="{916E01B6-18C1-48D1-9706-E136FCAC7122}" WorkUnitID="{3BD74638-131A-4795-9866-36C0FEC7B096}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Flash" ID="{56AD6B00-0D07-4AEA-85B1-A1CAA304712D}" WorkUnitID="{3BD74638-131A-4795-9866-36C0FEC7B096}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Sonar" ID="{EA20473A-7336-4B56-8381-B979361D6AA0}" WorkUnitID="{3BD74638-131A-4795-9866-36C0FEC7B096}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_EmergeAlarm" ID="{3C4B080A-CFEF-4D11-A4DF-90DCDBC89A0C}" WorkUnitID="{3BD74638-131A-4795-9866-36C0FEC7B096}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_UnderwaterAmbience" ID="{699181E6-D51D-4F43-90DE-D8A3988F16D8}" WorkUnitID="{3BD74638-131A-4795-9866-36C0FEC7B096}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>

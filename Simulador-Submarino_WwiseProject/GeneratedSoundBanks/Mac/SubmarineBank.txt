@@ -1,0 +1,14 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1646958889	Play_UnderwaterAmbience			\Default Work Unit\Play_UnderwaterAmbience	
+	2330535514	Play_Sumerge			\Default Work Unit\Play_Sumerge	
+	3376092819	Play_Sonar			\Default Work Unit\Play_Sonar	
+	3763399919	Play_SurfaceAmbience			\Default Work Unit\Play_SurfaceAmbience	
+	3906092864	Play_EmergeAlarm			\Default Work Unit\Play_EmergeAlarm	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	117648690	Underwater	C:\Users\Juan Cruz Di Nardo\Documents\GitHub\Simulador-Submarino\Simulador-Submarino_WwiseProject\.cache\EF\{EFECF50D-D130-AE83-4AC5-AC730C38E629}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Underwater		3409224
+	581395452	Sumerge	C:\Users\Juan Cruz Di Nardo\Documents\GitHub\Simulador-Submarino\Simulador-Submarino_WwiseProject\.cache\24\{2430994F-C8AB-8EA5-1FFA-A947C106729E}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sumerge		288560
+	638218279	On Water Surface	C:\Users\Juan Cruz Di Nardo\Documents\GitHub\Simulador-Submarino\Simulador-Submarino_WwiseProject\.cache\29\{2991F286-6E40-9361-5C15-935E4EF4FB22}.wem		\Actor-Mixer Hierarchy\Default Work Unit\On Water Surface		23252064
+	988955484	Emerge Alarm	C:\Users\Juan Cruz Di Nardo\Documents\GitHub\Simulador-Submarino\Simulador-Submarino_WwiseProject\.cache\E5\{E5812C31-A9D0-FE16-412B-2AC056C2B3E0}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Emerge Alarm		4050528
+	1051687162	Sonar	C:\Users\Juan Cruz Di Nardo\Documents\GitHub\Simulador-Submarino\Simulador-Submarino_WwiseProject\.cache\7B\{7B0FC49F-AF5D-6497-A2A6-F6A114145C31}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sonar		4419168
+

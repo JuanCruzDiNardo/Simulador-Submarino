@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class SubmarineStats : MonoBehaviour
 {
     public SM_Controller submarine;     // Referencia al submarino
+    public SubmarineSoundController soundManager;     // Audio State Manager
     public WaterSurface waterSurface; // Referencia a la superficie del agua (WaterSurface)
     public TextMeshProUGUI depthText;          // Texto UI para mostrar la profundidad
     public TextMeshProUGUI pressureText;       // Texto UI para mostrar la presión
@@ -14,6 +15,8 @@ public class SubmarineStats : MonoBehaviour
     public TextMeshProUGUI oxygenAlertText;         // Texto UI para mostrar el oxígeno
 
     public int tutorialStep = 0; // Paso actual del tutorial
+
+    bool underwater = false;
 
     public float oxygen = 100f;     // Oxígeno máximo
     public float oxygenConsumptionRate = 0.2f; // Tasa de consumo base de oxígeno
@@ -79,6 +82,12 @@ public class SubmarineStats : MonoBehaviour
     {
         if (depth > 3)
         {
+            if (!underwater){
+                underwater = true;
+                soundManager.SubmergeSound();
+                soundManager.SwitchState(SoundState.Underwater);
+            }            
+
             // Consumir oxígeno más rápido a mayor presión
             float consumption = oxygenConsumptionRate * pressure + submarine.currentSpeed * speedInfluenceOnOxygen;
             oxygen = Mathf.Max(0, oxygen - consumption * Time.deltaTime);
@@ -93,6 +102,13 @@ public class SubmarineStats : MonoBehaviour
         {
             // Recargar oxígeno cuando esté en la superficie
             oxygen = Mathf.Min(100, oxygen + oxygenRechargeRate * Time.deltaTime);
+
+            if (underwater)
+            {
+                underwater = false;
+                soundManager.SubmergeSound();
+                soundManager.SwitchState(SoundState.OnSurface);
+            }                           
         }
 
         oxygenAlert();
@@ -105,12 +121,16 @@ public class SubmarineStats : MonoBehaviour
         else if (oxygen > 50) 
         { 
             oxygenText.color = Color.white;
+            soundManager.ToggleAlarm(false);
             oxygenAlertText.gameObject.SetActive(false);
         }
         else if (oxygen > 25)
             oxygenText.color = Color.yellow;
         else
+        {
+            soundManager.ToggleAlarm(true);
             oxygenText.color = Color.red;
+        }            
     }
 
     // Actualizar el UI con los valores actuales
